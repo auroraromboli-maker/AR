@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,400;1,900&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Based on Retro-Futurist Maximalist Minimalism */
+  --color-primary: #715a49;
+  --color-primary-container: #f2d2bd;
+  --color-secondary: #674bb5;
+  --color-secondary-container: #ab8ffe;
+  --color-tertiary: #96482e;
+  --color-tertiary-container: #ffcdbe;
+  --color-background: #faf9f6;
+  --color-surface: #faf9f6;
+  --color-on-surface: #1a1c1a;
+  --color-on-surface-variant: #4f453f;
+  --color-outline: #81756e;
+  --color-outline-variant: #d2c4bb;
+
+  /* Typography */
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "Space Grotesk", sans-serif;
+
+  /* Spacing */
+  --spacing-section: 120px;
+  --spacing-edge: 40px;
+  --spacing-gutter: 24px;
+
+  /* Transitions */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.glass {
+  @apply bg-primary-container/80 backdrop-blur-2xl border-b-[0.5px] border-on-surface/10;
+}
+
+.btn-label {
+  @apply font-mono text-[11px] font-semibold tracking-[0.2em] uppercase;
+}
+
+.editorial-img {
+  @apply grayscale transition-all duration-700 hover:grayscale-0;
+}
